@@ -1,0 +1,4 @@
+repository "Gospel/Gospel@14569672283772@cloud"
+  path "/"
+    br "/main"
+    co "/main"
