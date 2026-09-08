@@ -4,10 +4,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject enemy;
+    public Vector3 offset1;
+    public Vector3 offset2;
+    public Vector3 offset3;
+    
     void Start()
     {
-        Instantiate(enemy, new Vector3(6, 0, 1),  Quaternion.identity);
-        Instantiate(enemy, new Vector3(4, 3.5f, 1),  Quaternion.identity);
-        Instantiate(enemy, new Vector3(4, -3.5f, 1),  Quaternion.identity);
+        Instantiate(enemy, offset1,  Quaternion.identity);
+        Instantiate(enemy, offset2,  Quaternion.identity);
+        Instantiate(enemy, offset3,  Quaternion.identity);
     }
 }

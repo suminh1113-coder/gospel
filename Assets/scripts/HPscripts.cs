@@ -1,22 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class enemy : MonoBehaviour
+public class HPscripts : MonoBehaviour
 {
     public int MaxHP = 20;
     public int HP = 20;
     [SerializeField] private Image HPbar;
     private RectTransform _RectTransform;
+    private GameObject Entity;
 
-    void Start()
+    void OnEnable()
     {
         _RectTransform = HPbar.GetComponent<RectTransform>();
+        Entity = transform.parent.gameObject;
     }
 
     public void HP_change()
     {
         if (((float)HP / (float)MaxHP) <= 0)
         {
+            HP = 0;
             _RectTransform.localScale =new Vector3(0, 1f, 1f);
+            Destroy(Entity);
         }
         else
         {
