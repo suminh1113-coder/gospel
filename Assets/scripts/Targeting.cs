@@ -3,18 +3,18 @@ using UnityEngine.InputSystem;
 public class Targeting : MonoBehaviour
 {
     public AttakManager _attakManager;
-    public GameObject GameController;
+    public GameObject Attak_ManagerObject;
     public GameObject TargetSign;
     public TargetSet _TargetSet;
-    public bool _isMouseOver;
+    private bool _isMouseOver;
     
 
 
     void Start()
     {
         _TargetSet = TargetSign.GetComponent<TargetSet>();
-        GameController = GameObject.FindWithTag("GameController");  
-        _attakManager = GameController.GetComponent<AttakManager>();
+        Attak_ManagerObject = GameObject.FindWithTag("Attak_Manager");  
+        _attakManager = Attak_ManagerObject.GetComponent<AttakManager>();
     }
     private void targeting()
     {

@@ -2,16 +2,30 @@ using UnityEngine;
 
 public class Skillbutton : MonoBehaviour
 {
-    public AttakManager _attakManager;
-    public GameObject GameController;
+    private AttakManager _attakManager;
+    private GameObject GameController;
+    public ManaManager _ManaManager;
+    public int SkillCost;
     void Start()
     {
-        GameController = GameObject.FindWithTag("GameController");  
+        GameController = GameObject.FindWithTag("Attak_Manager");  
         _attakManager = GameController.GetComponent<AttakManager>();
     }
     public void Click()
     {
-        _attakManager.Attak();
+        if (_attakManager.Target != null)
+        {
+            if (_ManaManager.Mana >= SkillCost)
+            {
+                _ManaManager.Mana -= SkillCost;
+                _ManaManager.ManaTextChange();
+                _attakManager.Attak();
+            }
+            else
+            {
+                
+            }
+        }
     }
     
 }

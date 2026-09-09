@@ -7,9 +7,13 @@ public class HPscripts : MonoBehaviour
     [SerializeField] private Image HPbar;
     private RectTransform _RectTransform;
     private GameObject Entity;
+    private AttakManager _attakManager;
+    private GameObject GameController;
 
     void OnEnable()
     {
+        GameController = GameObject.FindWithTag("Attak_Manager");  
+        _attakManager = GameController.GetComponent<AttakManager>();
         _RectTransform = HPbar.GetComponent<RectTransform>();
         Entity = transform.parent.gameObject;
     }
@@ -18,8 +22,7 @@ public class HPscripts : MonoBehaviour
     {
         if (((float)HP / (float)MaxHP) <= 0)
         {
-            HP = 0;
-            _RectTransform.localScale =new Vector3(0, 1f, 1f);
+            _attakManager.Target = null;
             Destroy(Entity);
         }
         else
