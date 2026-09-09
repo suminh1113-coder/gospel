@@ -5,10 +5,10 @@ public class AttakManager : MonoBehaviour
     public GameObject Target;
     public TargetSet _TargetSet;
     [SerializeField] private HPscripts _enemyHP;
-    public void Attak()
+    public void Attak(int Damage)
     {
         _enemyHP = Target.GetComponent<HPscripts>();
-        _enemyHP.HP -= Random.Range(1, 5);
+        _enemyHP.HP -= Random.Range(Damage-3, Damage+3);
         _enemyHP.HP_change();
     }
 

@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d244ecc9a40654489eafb57dc429c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Skillbutton
+  HaveSkill:
+  - {fileID: 11400000, guid: 01abce75554a07840b85e47b446a072f, type: 2}
   _ManaManager: {fileID: 1505076622}
   SkillCost: 1
 --- !u!4 &79041789
@@ -688,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -14152, y: -5634}
+  m_AnchoredPosition: {x: -15104, y: -6124}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051746156

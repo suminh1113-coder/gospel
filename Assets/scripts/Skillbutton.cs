@@ -1,7 +1,10 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Skillbutton : MonoBehaviour
 {
+    public List<Skill> HaveSkill;
     private AttakManager _attakManager;
     private GameObject GameController;
     public ManaManager _ManaManager;
@@ -10,6 +13,7 @@ public class Skillbutton : MonoBehaviour
     {
         GameController = GameObject.FindWithTag("Attak_Manager");  
         _attakManager = GameController.GetComponent<AttakManager>();
+        SkillCost = HaveSkill[0].Cost;
     }
     public void Click()
     {
@@ -19,11 +23,11 @@ public class Skillbutton : MonoBehaviour
             {
                 _ManaManager.Mana -= SkillCost;
                 _ManaManager.ManaTextChange();
-                _attakManager.Attak();
+                _attakManager.Attak(HaveSkill[0].Damage);
             }
             else
             {
-                
+                Debug.LogError("마나 없어여...뜌");
             }
         }
     }
