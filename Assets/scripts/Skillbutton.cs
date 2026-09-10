@@ -4,26 +4,33 @@ using System.Collections.Generic;
 
 public class Skillbutton : MonoBehaviour
 {
-    public List<Skill> HaveSkill;
     private AttakManager _attakManager;
     private GameObject GameController;
     public ManaManager _ManaManager;
-    public int SkillCost;
+    public int SKillCost;
+    private int SkillDamage;
+    
     void Start()
     {
         GameController = GameObject.FindWithTag("Attak_Manager");  
         _attakManager = GameController.GetComponent<AttakManager>();
-        SkillCost = HaveSkill[0].Cost;
+        ManaManager MM = GetComponentInParent<ManaManager>();
+        _ManaManager = MM;
+    }
+    public void SkillPush(Skill skillData)
+    {
+        SKillCost = skillData.Cost;
+        SkillDamage =  skillData.Damage;
     }
     public void Click()
     {
         if (_attakManager.Target != null)
         {
-            if (_ManaManager.Mana >= SkillCost)
+            if (_ManaManager.Mana >= SKillCost)
             {
-                _ManaManager.Mana -= SkillCost;
+                _ManaManager.Mana -= SKillCost;
                 _ManaManager.ManaTextChange();
-                _attakManager.Attak(HaveSkill[0].Damage);
+                _attakManager.Attak(SkillDamage, 0);
             }
             else
             {
