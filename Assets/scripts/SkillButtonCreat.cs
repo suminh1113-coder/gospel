@@ -9,21 +9,16 @@ public class SkillButtonCreat : MonoBehaviour
     [SerializeField] private RectTransform buttonParent;
     void Start()
     {
-        int index = 0;
+        int Skillcount = 0;
 
         foreach (Skill skill in HaveSkill)
         {
             GameObject instance = Instantiate(_Skillbutton, buttonParent);
-
             RectTransform rect = instance.GetComponent<RectTransform>();
-
-            // 생성할 때마다 오른쪽으로 이동
-            rect.anchoredPosition = spawnPosition + new Vector2(index * 4000f + -15500, -6500);
-
+            rect.anchoredPosition = spawnPosition + new Vector2(Skillcount * 1100f + -5000, -1900);
             Skillbutton button = instance.GetComponent<Skillbutton>();
             button.SkillPush(skill);
-
-            index++;
+            Skillcount++;
         }
     }
 }

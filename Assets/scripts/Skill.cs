@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "Skill", menuName = "SkillManager/Skill")]
 public class Skill : ScriptableObject
