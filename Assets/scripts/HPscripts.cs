@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HPscripts : MonoBehaviour
 {
-    public int MaxHP = 20;
-    public int HP = 20;
+    public int MaxHP;
+    public int HP;
     [SerializeField] private Image HPbar;
     private RectTransform _RectTransform;
     private GameObject Entity;
@@ -16,6 +16,7 @@ public class HPscripts : MonoBehaviour
         _attakManager = GameController.GetComponent<AttakManager>();
         _RectTransform = HPbar.GetComponent<RectTransform>();
         Entity = transform.parent.gameObject;
+        _RectTransform.localScale =new Vector3((float)HP / (float)MaxHP, 1f, 1f);
     }
 
     public void HP_change()

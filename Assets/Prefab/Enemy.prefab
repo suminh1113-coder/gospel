@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 7224429454251942501}
   - component: {fileID: 6538902248420424902}
   - component: {fileID: 3294871136394368606}
+  - component: {fileID: 6482421426458666682}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -288,10 +289,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targeting
   _attakManager: {fileID: 0}
-  GameController: {fileID: 0}
+  Attak_ManagerObject: {fileID: 0}
   TargetSign: {fileID: 4363136907714963800}
   _TargetSet: {fileID: 0}
-  _isMouseOver: 0
 --- !u!61 &6538902248420424902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -353,6 +353,18 @@ MonoBehaviour:
   MaxHP: 20
   HP: 20
   HPbar: {fileID: 6413997794100998052}
+--- !u!114 &6482421426458666682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598340448668615075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932084faef35a0845b9de53e5e72f715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDataLoad
 --- !u!1 &8650767701225190080
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +493,7 @@ Transform:
   m_GameObject: {fileID: 8868728501208105937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5110836, y: -2.5452902, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

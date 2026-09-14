@@ -15,7 +15,7 @@ public class SkillButtonCreat : MonoBehaviour
         {
             GameObject instance = Instantiate(_Skillbutton, buttonParent);
             RectTransform rect = instance.GetComponent<RectTransform>();
-            rect.anchoredPosition = spawnPosition + new Vector2(Skillcount * 1100f + -5000, -1900);
+            rect.anchoredPosition = spawnPosition + new Vector2(Skillcount * 70f + 50, 50);
             Skillbutton button = instance.GetComponent<Skillbutton>();
             button.SkillPush(skill);
             Skillcount++;
