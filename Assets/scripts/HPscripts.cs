@@ -17,6 +17,7 @@ public class HPscripts : MonoBehaviour
         _RectTransform = HPbar.GetComponent<RectTransform>();
         Entity = transform.parent.gameObject;
         _RectTransform.localScale =new Vector3((float)HP / (float)MaxHP, 1f, 1f);
+        
     }
 
     public void HP_change()

@@ -12,5 +12,6 @@ public class EnemyDataLoad : MonoBehaviour
         _SpriteRenderer.sprite = EnemyData.EnemySprite;
         _HPscripts = gameObject.GetComponent<HPscripts>();
         _HPscripts.MaxHP = EnemyData.EnemyHP;
+        _HPscripts.HP = EnemyData.EnemyHP;
     }
 }
